@@ -2,15 +2,6 @@
 
 This document contains the results and analysis from implementing various CNN architectures for classifying images from the CIFAR-10 dataset.
 
-## Dataset Overview
-- **Dataset**: CIFAR-10 (50,000 training images, 10,000 test images)
-- **Classes**: 10 classes (plane, car, bird, cat, deer, dog, frog, horse, ship, truck)
-- **Image Size**: 32×32×3 pixels
-- **Preprocessing**: 
-  - Training: Random crop, horizontal flip, normalization
-  - Testing: Only normalization
-- **Device Used**: CUDA
-
 ## Part (a): CNN Architecture Comparison
 
 ### 1. AlexNet Results
