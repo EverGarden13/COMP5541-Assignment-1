@@ -165,12 +165,7 @@ This document contains the results and analysis from implementing various CNN ar
 | ResNet18 + Data Aug | 90.2% | Better generalization |
 | **ResNet18 + OneCycleLR** | **95.2%** | **Highest performance overall** |
 
-## Key Conclusions
+![image](https://github.com/user-attachments/assets/22203bcd-2395-4ee0-9ca0-8640f56a92be)
 
-1. **Architecture matters**: ResNet18's residual connections significantly outperformed older architectures
-2. **Optimizer choice is crucial**: SGD with momentum achieved better final performance than adaptive methods
-3. **Learning rate scheduling is powerful**: OneCycleLR provided the biggest performance boost
-4. **Modern techniques work**: Combining ResNet architecture with OneCycleLR achieved 95.2% accuracy on CIFAR-10
-5. **Training dynamics**: Proper regularization and learning rate policies are as important as architecture design
 
-The results demonstrate the evolution of deep learning techniques, with modern approaches (ResNet + OneCycleLR) significantly outperforming classical methods while being more efficient to train. 
+
