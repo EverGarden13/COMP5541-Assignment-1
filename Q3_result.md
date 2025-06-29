@@ -2,12 +2,6 @@
 
 This document contains the results and analysis from transfer learning experiments to improve model classification performance on the CIFAR-10 dataset using ImageNet pre-trained models.
 
-## Experimental Overview
-- **Dataset**: CIFAR-10 (32×32 images resized to 224×224 for pre-trained models)
-- **Base Models**: AlexNet, ResNet18, VGG16 (ImageNet pre-trained)
-- **Device**: CUDA
-- **Training Setup**: SGD optimizer (lr=0.001, momentum=0.9), 10 epochs
-
 ## Part A: AlexNet Fine-tuning with Different Data Amounts
 
 ### Experimental Setup
@@ -15,6 +9,9 @@ This document contains the results and analysis from transfer learning experimen
 - **Comparison**: Pre-trained AlexNet vs. AlexNet from scratch
 - **Batch Size**: 64
 - **Architecture Modification**: Final layer changed to 10 classes for CIFAR-10
+
+![image](https://github.com/user-attachments/assets/60614985-303b-45dd-9910-cd2608ac77f2)
+
 
 ### Results Summary
 
@@ -63,6 +60,11 @@ This document contains the results and analysis from transfer learning experimen
 - **Data**: 50% of CIFAR-10 training data (25,000 samples)
 - **Training**: 10 epochs with identical settings
 
+![image](https://github.com/user-attachments/assets/00877274-3d0a-45d4-97c1-e7970ac46138)
+![image](https://github.com/user-attachments/assets/f4a022a0-cef7-4a47-a6cf-12f0b61bd914)
+
+
+
 ### Results Summary
 
 | Model | Test Accuracy | Test Loss | Parameters | Training Time/Epoch |
@@ -106,6 +108,11 @@ This document contains the results and analysis from transfer learning experimen
   - **Early**: Freeze early layers (layer1, layer2)
   - **Middle**: Freeze middle layers (layer2, layer3)
   - **Last Only**: Only fine-tune final fully connected layer
+ 
+  ![image](https://github.com/user-attachments/assets/5b3cd3cd-cc84-4702-b1da-a4d5d7d0043b)
+  ![image](https://github.com/user-attachments/assets/d3281c1e-8c6c-459d-a94e-3326af8697dd)
+
+
 
 ### Results Summary
 
@@ -156,62 +163,3 @@ This document contains the results and analysis from transfer learning experimen
    - ImageNet features transfer well to CIFAR-10
    - Different layer combinations can be effective
    - Robust feature hierarchy in ResNet18
-
-## Overall Results Comparison
-
-### Best Results from Each Part:
-
-| Experiment | Model/Strategy | Test Accuracy | Key Insight |
-|------------|----------------|---------------|-------------|
-| **Part A (50% data)** | Pre-trained AlexNet | 89.68% | Transfer learning essential |
-| **Part B** | ResNet18 | **94.30%** | Modern architecture superior |
-| **Part C** | ResNet18 (all layers) | **94.60%** | Full fine-tuning optimal |
-
-### Transfer Learning vs From-Scratch Summary:
-
-| Data Amount | Transfer Learning | From Scratch | Advantage |
-|-------------|------------------|--------------|-----------|
-| 10% (5K samples) | 82.99% | 12.89% | **+70.10%** |
-| 20% (10K samples) | 87.18% | 37.41% | **+49.77%** |
-| 50% (25K samples) | 89.68% | 51.06% | **+38.62%** |
-
-## Key Conclusions
-
-### 1. Transfer Learning is Transformational
-- **Not just beneficial, but essential** for small datasets
-- 70% performance advantage with limited data makes it mandatory
-- Enables practical deep learning with modest resources
-
-### 2. Architecture Selection Matters
-- **ResNet18 superior to VGG16**: Better accuracy with 12x fewer parameters
-- Modern architectural innovations (skip connections) outperform classical designs
-- Efficiency considerations favor ResNet18 for practical applications
-
-### 3. Fine-tuning Strategy Optimization
-- **Full fine-tuning**: Best for maximum accuracy requirements
-- **Strategic freezing**: 99% performance with improved efficiency
-- **Last-layer only**: Inadequate for computer vision tasks
-
-### 4. Domain Transfer Effectiveness
-- ImageNet features transfer remarkably well to CIFAR-10
-- Success across architectures indicates robust transferability
-- Small performance gaps suggest high feature compatibility
-
-### 5. Practical Decision Framework
-- **Data-constrained projects**: Transfer learning mandatory
-- **Resource-efficient needs**: Early layer freezing optimal balance
-- **Maximum accuracy**: Full fine-tuning worth the computational cost
-- **Architecture choice**: ResNet18 recommended for most scenarios
-
-## Final Insights
-
-**Transfer Learning Revolution**: These experiments demonstrate that transfer learning fundamentally changes deep learning economics. Instead of requiring massive datasets and computational resources, practitioners can achieve excellent performance (94%+ accuracy) with:
-
-- Modest data requirements (even 10% of full dataset works well)
-- Efficient training (10 epochs vs traditional hundreds)
-- Reduced computational costs (strategic layer freezing)
-- Accessible hardware requirements
-
-**Practical Impact**: Transfer learning democratizes deep learning by making high performance achievable with limited resources, confirming it should be the **default approach** for computer vision tasks.
-
-The overwhelming evidence positions transfer learning as an essential technique that enables practical deep learning deployment across diverse real-world scenarios, with strategic choices (architecture, freezing) depending on specific application constraints. 
