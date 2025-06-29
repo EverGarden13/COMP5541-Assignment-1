@@ -65,13 +65,6 @@ Open a terminal/command prompt in the directory containing the notebooks and run
 ```bash
 jupyter notebook
 ```
-
-Or if you prefer JupyterLab:
-
-```bash
-jupyter lab
-```
-
 ### 4. Open and Run the Notebooks
 
 #### For Q2.ipynb (CNN Architectures):
@@ -94,12 +87,6 @@ jupyter lab
    - Compare transfer learning vs. training from scratch
    - Display comparative results
 
-## Expected Runtime
-
-- **Q2.ipynb**: 2-6 hours (depending on hardware and number of epochs)
-- **Q3.ipynb**: 1-4 hours (transfer learning is generally faster)
-
-*Note: Runtime significantly decreases with GPU acceleration*
 
 ## Outputs
 
@@ -109,26 +96,6 @@ Both notebooks will generate:
 - Visualizations of training data
 - Trained model weights (saved automatically)
 
-## Troubleshooting
-
-### Common Issues and Solutions
-
-1. **CUDA Out of Memory Error**:
-   - Reduce batch size in the notebooks
-   - Use CPU instead of GPU by modifying device settings
-
-2. **Package Import Errors**:
-   - Ensure all required packages are installed
-   - Check Python version compatibility
-
-3. **Dataset Download Issues**:
-   - Ensure stable internet connection
-   - Clear `./data` folder and retry if download fails
-
-4. **Slow Training**:
-   - Reduce number of epochs for testing
-   - Use GPU acceleration if available
-   - Consider using smaller model variants
 
 ### GPU Setup
 To use GPU acceleration:
@@ -148,25 +115,3 @@ COMP5541-Assignment-1/
 └── (generated model files and plots)
 ```
 
-## Notes
-
-- The CIFAR-10 dataset (~170MB) will be downloaded automatically on first run
-- Models are trained for multiple epochs; you can interrupt and resume training
-- Results may vary slightly due to random initialization
-- For best results, run on a machine with GPU acceleration
-
-## Support
-
-If you encounter issues:
-1. Check that all dependencies are correctly installed
-2. Ensure sufficient disk space and memory
-3. Verify Python/PyTorch versions are compatible
-4. Try running with smaller batch sizes or fewer epochs for testing
-
-## Assignment Context
-
-These notebooks are part of COMP5541 Assignment 1, focusing on:
-- Understanding CNN architectures
-- Implementing transfer learning techniques
-- Comparing different optimization strategies
-- Analyzing model performance on image classification tasks 
