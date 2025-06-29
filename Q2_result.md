@@ -25,6 +25,9 @@ This document contains the results and analysis from implementing various CNN ar
   - Fast initial convergence
   - Shows signs of overfitting after epoch 20
   - Training accuracy continues improving while test accuracy plateaus
+ 
+  - ![image](https://github.com/user-attachments/assets/07973d73-f937-4f3a-b21b-3fbec0f547fc)
+
 
 ### 2. VGG16 Results  
 **Architecture**: VGG16 with batch normalization
@@ -38,6 +41,9 @@ This document contains the results and analysis from implementing various CNN ar
   - Slower initial training due to deeper architecture
   - Better final performance than AlexNet
   - More stable training curves with batch normalization
+ 
+  - ![image](https://github.com/user-attachments/assets/6b582c83-2718-42f7-851e-74af6ec8e3e0)
+
 
 ### 3. ResNet18 Results
 **Architecture**: ResNet18 with residual connections
@@ -51,6 +57,8 @@ This document contains the results and analysis from implementing various CNN ar
   - **Best performance** among the three architectures
   - Most stable training with least overfitting
   - Residual connections enable effective deep network training
+  - ![image](https://github.com/user-attachments/assets/7ab54f22-293d-49e9-b5b8-c8d18da3bd09)
+
 
 ### Part (a) Analysis Summary
 
@@ -77,10 +85,16 @@ This document contains the results and analysis from implementing various CNN ar
 - **Best Test Accuracy**: ~79.4% (epoch 21-23)
 - **Training Pattern**: Fast initial convergence, plateaus at lower accuracy
 
+- ![image](https://github.com/user-attachments/assets/5cceb596-47b1-46a7-bfd1-1b2551ea4fb8)
+
+
 #### 3. Adam
 - **Learning Rate**: 0.001, Betas: (0.9, 0.999)  
 - **Best Test Accuracy**: ~80.4% (epoch 21)
 - **Training Pattern**: Very smooth training, stable but moderate performance
+
+- ![image](https://github.com/user-attachments/assets/33a47a01-43ad-4de9-9fc5-ff687e16812d)
+
 
 ### Part (b) Analysis Summary
 
@@ -92,6 +106,9 @@ This document contains the results and analysis from implementing various CNN ar
 3. **SGD** demonstrated superior generalization for this architecture and dataset
 4. **Adam** provided the most stable training with minimal fluctuations
 5. **Architecture-optimizer interaction** matters - AlexNet responded better to SGD-style optimization
+
+   ![image](https://github.com/user-attachments/assets/1eef9265-bcd0-459a-a672-047d64afd2c4)
+
 
 ## Part (c): Performance Improvement Methods
 
@@ -107,6 +124,9 @@ This document contains the results and analysis from implementing various CNN ar
 - **Training Characteristics**: More robust training, reduced overfitting
 - **Improvement**: Better generalization through data diversity
 
+- ![image](https://github.com/user-attachments/assets/b65c0461-6f45-4501-8b74-b393d98e2eb9)
+
+
 ### Method 2: OneCycleLR Learning Rate Policy
 **Configuration**:
 - Max learning rate: 0.1
@@ -119,6 +139,9 @@ This document contains the results and analysis from implementing various CNN ar
   - Faster convergence to high accuracy
   - More efficient training with dynamic learning rate
   - **Best overall result** in the entire assignment
+ 
+  - ![image](https://github.com/user-attachments/assets/bcbd0f52-8eac-48b6-b054-732bb3882605)
+
 
 ### Part (c) Analysis Summary
 
